@@ -1,1 +1,28 @@
+name: Bluesky Auto Reposter (HotBleusky)
 
+on:
+  schedule:
+    - cron: "0 * * * *"   # elke uur
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install atproto
+
+      - name: Run autoposter (HotBleusky)
+        env:
+          BSKY_USERNAME_HB: ${{ secrets.BSKY_USERNAME_HB }}
+          BSKY_PASSWORD_HB: ${{ secrets.BSKY_PASSWORD_HB }}
+        run: python autoposter_hb.py
