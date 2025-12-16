@@ -9,7 +9,7 @@ FEED_URI = "at://did:plc:jaka644beit3x4vmmg6yysw7/app.bsky.feed.generator/aaamyq
 MAX_PER_RUN = 100
 MAX_PER_USER = 5
 HOURS_BACK = 3
-DELAY_SECONDS = 0,5
+DELAY_SECONDS = 1
 
 REPOST_LOG_FILE = "reposted_feed.txt"
 
