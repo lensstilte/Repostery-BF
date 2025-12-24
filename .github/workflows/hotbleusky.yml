@@ -2,7 +2,7 @@ name: Bluesky Auto Reposter (HotBleusky)
 
 on:
   schedule:
-    - cron: "15 */2 * * *"
+    - cron: "19 */2 * * *"
   workflow_dispatch:
 
 jobs:
