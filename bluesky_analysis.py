@@ -13,16 +13,9 @@ import requests
 # INSTELLINGEN
 # ==========================================
 
-ACCOUNTS = [
-    "pinupstickers.bsky.social",
-    "leonie04.bsky.social",
-    "eyescandy.bsky.social",
-    "sexypinups.bsky.social",
-    "dmphotos.bsky.social",
-    "blackandwhites.bsky.social",
-    "sandrasia.bsky.social",
-    "jey09.bsky.social",
-    "tasha510.bsky.social",
+ACCOUNTS = [  
+    "big-dominio.bsky.social",
+    
 ]
 
 POSTS_PER_ACCOUNT = 500
