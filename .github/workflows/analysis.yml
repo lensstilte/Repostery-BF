@@ -1,41 +1,29 @@
-name: Bluesky Posting Time Analysis
+name: Bluesky Analysis
 
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
-
   analyze:
-
     runs-on: ubuntu-latest
 
-    timeout-minutes: 30
-
     steps:
-
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install packages
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests tzdata
+      - name: Install
+        run: pip install requests tzdata
 
-      - name: Run Bluesky analysis
-        run: |
-          python bluesky_analysis.py
+      - name: Run
+        run: python bluesky_analysis.py
 
-      - name: Upload results
+      - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: bluesky-analysis-results
-          path: analysis_output/
-          retention-days: 30
+          name: bluesky-results
+          path: analysis_output
